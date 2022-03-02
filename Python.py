@@ -1,21 +1,29 @@
-import random
+for i in range(0,40,2):
+    print(i)
 
-v = random.randint(0, 5)
-z = random.randint(0, 5)
+lettre = input("entrez une lettre")
+chaine = input("entrez une chaine de caractère")
+cpt=0
+for i in range(0, len(chaine)):
+    if chaine[i] == lettre:
+        cpt+=1
 
-x = 6
-y = 9
+print(cpt)
 
-while x!=z or y!= v:
-    x = int(input("entrez le numero de la colonne, entre 1 et 5 : "))
-    y = int(input("entrez le numero de la ligne, entre 1 et 5 : "))
-    while(x > 5):
-	    x = int(input("entrez le numero de la colonne, entre 1 et 5"))
-    while(y > 5 ):
-	    y = int(input("entrez un nombre entre 1 et 5"))
-    if (x==z and y==v):
-	    print("Touché")
-    elif (x!=z and y!=v):
-	    print("A l'eau")
-    elif (x!=z or y !=v):
-        print("En vue")
+def table(nombre, i):
+    y = nombre * i
+    return y
+nombre = int(input("entrez un nombre"))
+for p in range(0,11):
+    print(table(nombre,p))
+
+
+nombre = int(input("choisissez un nombre"))
+for i in range(1,nombre+1):
+    if ((nombre%i)==0):
+        print(i)
+
+poid = float(input("donnez votre poids"))
+taille = float(input("donnez votre taille"))
+imc = poid//(taille**2)
+print(str(imc))
