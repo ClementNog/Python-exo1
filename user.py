@@ -1,10 +1,22 @@
 class User:
-    
+    _age = 0
     def __init__(self, id, name, password):
         self.id = id
         self.name = name
         self.password = password
-        
+    
+    @property
+    def age(self):
+        return self._age
+    
+    @age.setter
+    
+    def age(self,new_age):
+        if new_age > 0 and new_age <120:
+            self._age = new_age
+        else:
+            print("veuillez renseigner un âge valide")
+    
     def check_password(self, password):
         return self.password == password
     def __str__(self):
@@ -43,3 +55,5 @@ liste_divers= [etablissement, service, user1, user2, user3]
 
 for item in liste_divers:
     print(item)
+user1.age = int(input('veuillez renseigner un age : '))
+print(f'{user1.name} a {user1.age} ans')
