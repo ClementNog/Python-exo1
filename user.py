@@ -1,11 +1,12 @@
-from abc import abstractmethod
+from abc import ABC, abstractmethod
 
 
-class Profile:
+class Profile(ABC):
     def __init__(self, id, name, password):
         self.id = id
         self.name = name
         self.password = password
+    
     @abstractmethod
     def get_profile(self):
         pass
